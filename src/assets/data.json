@@ -1,0 +1,19 @@
+{
+  "records": [
+    {
+      "id": 1,
+      "title": "Hello world",
+      "description": "The unofficial greeting of technology"
+    },
+    {
+      "id": 2,
+      "title": "Awaiting further instruction",
+      "description": "The unofficial sign that your computer wants to hear from you"
+    },
+    {
+      "id": 3,
+      "title": "Testing",
+      "description": "Test test test"
+    }
+  ]
+}
