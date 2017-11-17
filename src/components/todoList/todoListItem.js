@@ -7,7 +7,7 @@ const TodoListItem = ({ record }) => {
   </div>
 }
 
-const { arrayOf, object } = PropTypes;
+const { object } = PropTypes;
 
 TodoListItem.propTypes = {
   record: object
