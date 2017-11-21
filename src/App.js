@@ -1,37 +1,40 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import AddTodo from './components/addTodo';
 import Header from './components/base_components/header';
 import TodoList from './components/todoList';
-import { connect } from 'react-redux'
-import data from './assets/data.json'
-import * as Store from './state/store'
-import { fetchRecords } from './state/ducks/record/actions'
+import data from './assets/data.json';
+import * as Store from './state/store';
+import { fetchRecords } from './state/ducks/record/actions';
+import { bindActionCreators } from 'redux';
 
 class App extends Component {
   componentDidMount() {
     const { records, fetchRecords } = this.props;
+
+    fetchRecords({ data });
   }
 
   render() {
     return (
       <div>
         <Header />
-
-        My App
-
-        {/* < AddTodo submitTodo={() => { }} /> */}
         <TodoList records={this.props.records} />
       </div >
     );
   }
 }
 
-const mapStateToProps = (state) => ({
-  records: state.records
-});
+function mapStateToProps(state) {
+  return {
+    records: state.record.records,
+  }
+}
 
-const mapDispatchToProps = (dispatch) => (
-  fetchRecords
-);
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchRecords: bindActionCreators(fetchRecords, dispatch),
+  }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
