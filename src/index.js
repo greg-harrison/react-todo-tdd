@@ -7,13 +7,7 @@ import './index.css';
 import App from './App';
 import configureStore from './state/store';
 
-const reduxStore = configureStore({
-  records: [],
-  draft: {
-    title: '',
-    description: '',
-  },
-});
+const reduxStore = configureStore({});
 
 const RootHtml = () => (
   <ReduxProvider store={reduxStore}>
@@ -21,4 +15,7 @@ const RootHtml = () => (
   </ReduxProvider>
 );
 
-render(<RootHtml />, document.getElementById('root'));
+render(
+  <RootHtml />,
+  document.getElementById('root'),
+);
