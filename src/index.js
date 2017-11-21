@@ -1,22 +1,24 @@
 import React from 'react';
+
 import { render } from 'react-dom';
+import { Provider as ReduxProvider } from 'react-redux';
+
 import './index.css';
-import { Provider as ReduxProvider } from 'react-redux'
-
 import App from './App';
-import configureStore from './state/store'
+import configureStore from './state/store';
 
-import registerServiceWorker from './registerServiceWorker';
-registerServiceWorker();
-
-const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
-
-
+const reduxStore = configureStore({
+  records: [],
+  draft: {
+    title: '',
+    description: '',
+  },
+});
 
 const RootHtml = () => (
-  <ReduxProvider store={reduxStore} >
+  <ReduxProvider store={reduxStore}>
     <App />
-  </ReduxProvider >
-)
+  </ReduxProvider>
+);
 
-render(RootHtml, document.getElementById('root'));
+render(<RootHtml />, document.getElementById('root'));

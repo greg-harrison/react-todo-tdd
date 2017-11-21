@@ -1,5 +1,5 @@
-import reducer from "./reducers";
-import * as recordActions from "./actions";
+import reducer from './reducers';
+import * as recordActions from './actions';
 
 export {
   recordActions,

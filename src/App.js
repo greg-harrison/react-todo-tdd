@@ -8,7 +8,7 @@ import * as Store from './state/store'
 import { fetchRecords } from './state/ducks/record/actions'
 
 function connectWithStore(store, WrappedComponent, ...args) {
-  var ConnectedWrappedComponent = connect(...args)(WrappedComponent)
+  let ConnectedWrappedComponent = connect(...args)(WrappedComponent)
   return function (props) {
     return <ConnectedWrappedComponent {...props} store={store} />
   }
@@ -17,7 +17,6 @@ function connectWithStore(store, WrappedComponent, ...args) {
 class App extends Component {
   componentDidMount() {
     const { records, fetchRecords } = this.props;
-    console.log('hello world')
   }
 
   render() {
@@ -28,14 +27,14 @@ class App extends Component {
         My App
 
         {/* < AddTodo submitTodo={() => { }} /> */}
-        < TodoList records={this.props.records} />
+        <TodoList records={this.props.records} />
       </div >
-    )
+    );
   }
-};
+}
 
 const mapStateToProps = (state) => ({
-  records: state.records,
+  records: state.records
 });
 
 const mapDispatchToProps = (dispatch) => (
