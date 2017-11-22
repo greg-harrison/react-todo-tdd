@@ -25,7 +25,7 @@ const recordListReducer = (state = initialState, action) => {
     }
 
     case types.ADD_RECORD: {
-      return state.records = state.records.push(action.payload.draft);
+      return state.records = state.records.push(action.payload.draft)
     }
 
     default: return state
