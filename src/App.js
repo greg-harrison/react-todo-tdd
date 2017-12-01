@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import React, { Component } from 'react';
-import AddTodo from './components/addTodo';
 import Header from './components/base_components/header';
 import TodoList from './components/todoList';
 import data from './assets/data.json';
 import * as Store from './state/store';
 import { fetchRecords } from './state/ducks/record/actions';
-import { bindActionCreators } from 'redux';
 
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
+    console.log('this.props', this.props);
     const { records, fetchRecords } = this.props;
 
     fetchRecords({ data });
