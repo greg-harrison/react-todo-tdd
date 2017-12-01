@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TodoListItem = ({ record }) => {
-  return <div>
+const TodoListItem = ({ record }) => (
+  <div>
     {record.title} : {record.description}
   </div>
-}
+)
 
 const { object } = PropTypes;
 
