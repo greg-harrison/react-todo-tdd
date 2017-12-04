@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TodoListItem = ({ record }) => (
-  <div>
-    {record.title} : {record.description}
+  <div className="card">
+    <p>
+      {record.title} - {record.description}
+    </p>
   </div>
 )
 
