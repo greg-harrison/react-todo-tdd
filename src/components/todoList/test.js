@@ -27,7 +27,7 @@ describe('TodoListItem component', () => {
     expect(component.exists()).toEqual(true);
   });
   it('Should render the title', () => {
-    expect(component.find(record.title))
+    expect(component.find(record.title));
   })
 });
 
